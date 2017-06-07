@@ -13,6 +13,11 @@ namespace Ambar
         public override void DidFinishLaunching(NSNotification notification)
         {
             // Insert code here to initialize your application
+            NSStatusBar statusBar = new NSStatusBar();
+
+            var statusItem = statusBar.CreateStatusItem(NSStatusItemLength.Variable);
+            statusItem.Title = "Ambar";
+            statusItem.HighlightMode = true;
         }
 
         public override void WillTerminate(NSNotification notification)
