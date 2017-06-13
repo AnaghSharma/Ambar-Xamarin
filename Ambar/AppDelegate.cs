@@ -20,7 +20,13 @@ namespace Ambar
 			NSStatusItem statusItem = statusBar.CreateStatusItem(NSStatusItemLength.Variable);
 
             var button = statusItem.Button;
-            button.Image = new NSImage("StatusBarIcon.png");
+
+            NSImage image = new NSImage("StatusBarIcon.png")
+            {
+                Template = true
+            };
+
+            button.Image = image;
             button.Action = new ObjCRuntime.Selector("toggle:");
             button.Target = this;
         }
