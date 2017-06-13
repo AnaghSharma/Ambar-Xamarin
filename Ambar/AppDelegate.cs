@@ -1,23 +1,23 @@
 ﻿using AppKit;
 using Foundation;
-using System;
 
 namespace Ambar
 {
     [Register("AppDelegate")]
     public class AppDelegate : NSApplicationDelegate
     {
-        NSStatusBar statusBar = new NSStatusBar();
-        NSPopover popOver = new NSPopover();
+		NSStatusBar statusBar = new NSStatusBar();
+        NSStatusItem statusItem;
+        readonly NSPopover popOver = new NSPopover();
 
         public AppDelegate()
         {
+            statusItem = statusBar.CreateStatusItem(NSStatusItemLength.Variable);
         }
 
         public override void DidFinishLaunching(NSNotification notification)
         {
 			// Insert code here to initialize your application
-			NSStatusItem statusItem = statusBar.CreateStatusItem(NSStatusItemLength.Variable);
 
             var button = statusItem.Button;
 
@@ -29,6 +29,12 @@ namespace Ambar
             button.Image = image;
             button.Action = new ObjCRuntime.Selector("toggle:");
             button.Target = this;
+
+
+            var storyboard = NSStoryboard.FromName("Main", null);
+            var controller = storyboard.InstantiateControllerWithIdentifier("PopupController") as ViewController;
+
+            popOver.ContentViewController = controller;
         }
 
         public override void WillTerminate(NSNotification notification)
@@ -39,7 +45,21 @@ namespace Ambar
         [Export ("toggle:")]
         public void Toggle(NSObject sender)
         {
-            Console.WriteLine("Be Awesome");
+            if (popOver.Shown)
+                Close(sender);
+            else Show(sender);
+        }
+
+        public void Show(NSObject sender)
+        {
+            var button = statusItem.Button;
+            popOver.Show(button.Bounds, button, NSRectEdge.MaxYEdge);
+
+        }
+
+        public void Close(NSObject sender)
+        {
+            popOver.PerformClose(sender);
         }
     }
 }

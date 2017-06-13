@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -646,6 +647,33 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kAP-Au-Fpk">
+            <objects>
+                <viewController storyboardIdentifier="PopupController" id="r6k-Cr-70M" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" id="PDz-hz-7b3">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9V-dx-rg1">
+                                <rect key="frame" x="185" y="141" width="81" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Be awesome" id="7VW-Im-aDC">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="v9V-dx-rg1" firstAttribute="centerX" secondItem="PDz-hz-7b3" secondAttribute="centerX" id="PlN-gf-5kJ"/>
+                            <constraint firstItem="v9V-dx-rg1" firstAttribute="centerY" secondItem="PDz-hz-7b3" secondAttribute="centerY" id="jPc-Oe-NYR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="n3b-vm-BzC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="302"/>
         </scene>
     </scenes>
 </document>
