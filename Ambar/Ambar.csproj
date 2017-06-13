@@ -62,9 +62,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512%402x.png" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\StatusBarIcon.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\StatusBarIcon.imageset\StatusBarIcon.png" />
-    <ImageAsset Include="Assets.xcassets\StatusBarIcon.imageset\StatusBarIcon%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -86,7 +83,7 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\StatusBarIcon%402x.png" />
+    <BundleResource Include="Resources\StatusBarIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
