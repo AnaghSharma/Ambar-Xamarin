@@ -9,6 +9,7 @@ namespace Ambar
 		NSStatusBar statusBar = new NSStatusBar();
         NSStatusItem statusItem;
         readonly NSPopover popOver = new NSPopover();
+        EventMonitor eventMonitor;
 
         public AppDelegate()
         {
@@ -35,6 +36,8 @@ namespace Ambar
             var controller = storyboard.InstantiateControllerWithIdentifier("PopupController") as ViewController;
 
             popOver.ContentViewController = controller;
+
+            eventMonitor = new EventMonitor(NSEventMask.LeftMouseDown, MouseEventHandler);
         }
 
         public override void WillTerminate(NSNotification notification)
@@ -54,12 +57,20 @@ namespace Ambar
         {
             var button = statusItem.Button;
             popOver.Show(button.Bounds, button, NSRectEdge.MaxYEdge);
-
+            eventMonitor.Start();
         }
 
         public void Close(NSObject sender)
         {
             popOver.PerformClose(sender);
+            eventMonitor.Stop();
+        }
+
+        void MouseEventHandler(NSEvent _event)
+        {
+            if (popOver.Shown)
+                Close(_event);
+            eventMonitor.Start();
         }
     }
 }
