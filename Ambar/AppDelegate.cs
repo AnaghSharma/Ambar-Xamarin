@@ -37,7 +37,8 @@ namespace Ambar
 
             popOver.ContentViewController = controller;
 
-            eventMonitor = new EventMonitor(NSEventMask.LeftMouseDown, MouseEventHandler);
+            eventMonitor = new EventMonitor((NSEventMask.LeftMouseDown|NSEventMask.RightMouseDown), MouseEventHandler);
+            eventMonitor.Start();
         }
 
         public override void WillTerminate(NSNotification notification)
@@ -70,7 +71,6 @@ namespace Ambar
         {
             if (popOver.Shown)
                 Close(_event);
-            eventMonitor.Start();
         }
     }
 }
