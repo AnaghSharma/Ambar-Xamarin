@@ -30,5 +30,10 @@ namespace Ambar
                 // Update the view, if already loaded.
             }
         }
+
+        partial void QuitApplication(NSObject sender)
+        {
+            NSApplication.SharedApplication.Terminate((sender));
+        }
     }
 }
