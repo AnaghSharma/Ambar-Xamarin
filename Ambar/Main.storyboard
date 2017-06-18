@@ -664,7 +664,11 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71f-Hr-d2Y">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="uXR-S6-vp1">
+                                <rect key="frame" x="20" y="114" width="80" height="80"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="proportionallyDown" image="MakeEpicThings" id="HNg-pW-nu0"/>
+                            </imageView>
+                            <button toolTip="Close Application" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71f-Hr-d2Y">
                                 <rect key="frame" x="292" y="3" width="66" height="32"/>
                                 <buttonCell key="cell" type="push" title="Quit" alternateTitle="Close the application" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VpU-D6-Dlq">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -677,17 +681,19 @@
                                 </connections>
                             </button>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xTe-6E-esw">
-                                <rect key="frame" x="20" y="204" width="160" height="5"/>
+                                <rect key="frame" x="20" y="208" width="160" height="5"/>
                             </box>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="xTe-6E-esw" firstAttribute="leading" secondItem="v9V-dx-rg1" secondAttribute="leading" id="Lbz-cI-gDc"/>
-                            <constraint firstAttribute="trailing" secondItem="71f-Hr-d2Y" secondAttribute="trailing" constant="10" id="Pi4-6q-naR"/>
-                            <constraint firstAttribute="trailing" secondItem="xTe-6E-esw" secondAttribute="trailing" constant="182" id="TxN-rD-aNa"/>
-                            <constraint firstItem="v9V-dx-rg1" firstAttribute="top" secondItem="PDz-hz-7b3" secondAttribute="top" constant="20" id="oAO-t5-Y5D"/>
-                            <constraint firstItem="v9V-dx-rg1" firstAttribute="leading" secondItem="PDz-hz-7b3" secondAttribute="leading" constant="20" id="p9E-Hc-aXc"/>
-                            <constraint firstAttribute="bottom" secondItem="71f-Hr-d2Y" secondAttribute="bottom" constant="10" id="r8u-31-7qj"/>
-                            <constraint firstItem="xTe-6E-esw" firstAttribute="top" secondItem="v9V-dx-rg1" secondAttribute="bottom" constant="20" id="ypr-dO-nOS"/>
+                            <constraint firstAttribute="trailing" secondItem="xTe-6E-esw" secondAttribute="trailing" constant="182" id="7Ls-UJ-KaH"/>
+                            <constraint firstItem="xTe-6E-esw" firstAttribute="top" secondItem="v9V-dx-rg1" secondAttribute="bottom" constant="16" id="BOv-gl-SXM"/>
+                            <constraint firstItem="uXR-S6-vp1" firstAttribute="top" secondItem="xTe-6E-esw" secondAttribute="bottom" constant="16" id="HBH-jK-2GK"/>
+                            <constraint firstAttribute="bottom" secondItem="71f-Hr-d2Y" secondAttribute="bottom" constant="10" id="JZw-TY-wBe"/>
+                            <constraint firstItem="v9V-dx-rg1" firstAttribute="leading" secondItem="PDz-hz-7b3" secondAttribute="leading" constant="20" id="Snm-am-wlt"/>
+                            <constraint firstItem="xTe-6E-esw" firstAttribute="leading" secondItem="v9V-dx-rg1" secondAttribute="leading" id="a2b-z7-EVK"/>
+                            <constraint firstItem="v9V-dx-rg1" firstAttribute="top" secondItem="PDz-hz-7b3" secondAttribute="top" constant="20" id="urO-kp-urO"/>
+                            <constraint firstItem="xTe-6E-esw" firstAttribute="leading" secondItem="uXR-S6-vp1" secondAttribute="leading" id="wO0-VY-eV5"/>
+                            <constraint firstAttribute="trailing" secondItem="71f-Hr-d2Y" secondAttribute="trailing" constant="10" id="zEc-dK-zgj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -700,4 +706,7 @@
             <point key="canvasLocation" x="49" y="302"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MakeEpicThings" width="46.080001831054688" height="46.080001831054688"/>
+    </resources>
 </document>

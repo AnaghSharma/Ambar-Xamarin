@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\StatusBarIcon.png" />
+    <BundleResource Include="Resources\MakeEpicThings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
