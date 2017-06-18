@@ -15,6 +15,9 @@ namespace Ambar
         [Outlet]
         AppKit.NSButton QuitButton { get; set; }
 
+        [Outlet]
+        AppKit.NSTextFieldCell titleText { get; set; }
+
         [Action ("QuitApplication:")]
         partial void QuitApplication (Foundation.NSObject sender);
         
@@ -23,6 +26,11 @@ namespace Ambar
             if (QuitButton != null) {
                 QuitButton.Dispose ();
                 QuitButton = null;
+            }
+
+            if (titleText != null) {
+                titleText.Dispose ();
+                titleText = null;
             }
         }
     }

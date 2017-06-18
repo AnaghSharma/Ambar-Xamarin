@@ -656,21 +656,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="362" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9V-dx-rg1">
-                                <rect key="frame" x="18" y="77" width="188" height="203"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9V-dx-rg1">
+                                <rect key="frame" x="18" y="227" width="4" height="53"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="7VW-Im-aDC">
                                     <font key="font" size="36" name="SFUIText-Bold"/>
-                                    <string key="title">Make
-Epic
-Things</string>
                                     <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="71f-Hr-d2Y">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71f-Hr-d2Y">
                                 <rect key="frame" x="292" y="3" width="66" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Quit" alternateTitle="Close the application" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VpU-D6-Dlq">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -681,10 +676,23 @@ Things</string>
                                     <action selector="QuitApplication:" target="r6k-Cr-70M" id="b8S-LR-Foe"/>
                                 </connections>
                             </button>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xTe-6E-esw">
+                                <rect key="frame" x="20" y="204" width="160" height="5"/>
+                            </box>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="xTe-6E-esw" firstAttribute="leading" secondItem="v9V-dx-rg1" secondAttribute="leading" id="Lbz-cI-gDc"/>
+                            <constraint firstAttribute="trailing" secondItem="71f-Hr-d2Y" secondAttribute="trailing" constant="10" id="Pi4-6q-naR"/>
+                            <constraint firstAttribute="trailing" secondItem="xTe-6E-esw" secondAttribute="trailing" constant="182" id="TxN-rD-aNa"/>
+                            <constraint firstItem="v9V-dx-rg1" firstAttribute="top" secondItem="PDz-hz-7b3" secondAttribute="top" constant="20" id="oAO-t5-Y5D"/>
+                            <constraint firstItem="v9V-dx-rg1" firstAttribute="leading" secondItem="PDz-hz-7b3" secondAttribute="leading" constant="20" id="p9E-Hc-aXc"/>
+                            <constraint firstAttribute="bottom" secondItem="71f-Hr-d2Y" secondAttribute="bottom" constant="10" id="r8u-31-7qj"/>
+                            <constraint firstItem="xTe-6E-esw" firstAttribute="top" secondItem="v9V-dx-rg1" secondAttribute="bottom" constant="20" id="ypr-dO-nOS"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="QuitButton" destination="71f-Hr-d2Y" id="VsI-6l-3AU"/>
+                        <outlet property="titleText" destination="7VW-Im-aDC" id="EBT-HR-zF4"/>
                     </connections>
                 </viewController>
                 <customObject id="n3b-vm-BzC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
