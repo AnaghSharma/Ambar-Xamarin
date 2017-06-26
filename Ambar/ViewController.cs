@@ -43,7 +43,13 @@ namespace Ambar
 
         partial void QuitApplication(NSObject sender)
         {
-            NSApplication.SharedApplication.Terminate((sender));
+            var alert = new NSAlert();
+            alert.MessageText = "Are you sure you want to Quit Ambar?";
+            alert.AddButton("Quit");
+            alert.AddButton("Cancel");
+            var retValue = alert.RunModal();
+            if(retValue == 1000)
+                NSApplication.SharedApplication.Terminate((sender));
         }
     }
 }
