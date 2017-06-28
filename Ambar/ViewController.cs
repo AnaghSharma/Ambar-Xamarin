@@ -1,5 +1,4 @@
-﻿﻿using System;
-
+﻿﻿﻿using System;
 using AppKit;
 using Foundation;
 
@@ -7,6 +6,7 @@ namespace Ambar
 {
     public partial class ViewController : NSViewController
     {
+        public static event EventHandler QuitButtonClicked;
         NSAttributedString titleString = new NSAttributedString("Make\nEpic\nThings",
 															   new NSStringAttributes()
 															   {
@@ -43,13 +43,8 @@ namespace Ambar
 
         partial void QuitApplication(NSObject sender)
         {
-            var alert = new NSAlert();
-            alert.MessageText = "Are you sure you want to Quit Ambar?";
-            alert.AddButton("Quit");
-            alert.AddButton("Cancel");
-            var retValue = alert.RunModal();
-            if(retValue == 1000)
-                NSApplication.SharedApplication.Terminate((sender));
+            if (QuitButtonClicked != null)
+                QuitButtonClicked(this, null);
         }
     }
 }

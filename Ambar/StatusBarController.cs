@@ -16,7 +16,13 @@ namespace Ambar
             statusBar = new NSStatusBar();
             statusItem = statusBar.CreateStatusItem(NSStatusItemLength.Variable);
             popOver = new NSPopover();
+            ViewController.QuitButtonClicked += HandleQuitButtonClicked;
 		}
+
+        ~StatusBarController()
+        {
+            ViewController.QuitButtonClicked -= HandleQuitButtonClicked;
+        }
 
         public void InitStatusBarItem(string image, NSPopover popOver)
         {
@@ -61,5 +67,19 @@ namespace Ambar
 		    if (popOver.Shown)
 		        Close(_event);
 		}
-	}
+
+        void HandleQuitButtonClicked(object sender, System.EventArgs e)
+        {
+            Close(sender as NSObject);
+            var alert = new NSAlert()
+            {
+                MessageText = "Are you sure you want to Quit Ambar?"
+            };
+            alert.AddButton("Quit");
+			alert.AddButton("Cancel");
+			var retValue = alert.RunModal();
+			if(retValue == 1000)
+                NSApplication.SharedApplication.Terminate((sender as NSObject));
+		}
+    }
 }
