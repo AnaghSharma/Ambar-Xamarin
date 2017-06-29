@@ -28,6 +28,7 @@ Unless stated otherwise, everything is done in Visual Studio for Mac.
 
 ## To-do
 - [ ] Add a **Launch at Login** setting.
+- [ ] Add a **About** windows.
 - [ ] Advanced UI.
 
 
