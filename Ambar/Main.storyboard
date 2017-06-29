@@ -669,8 +669,8 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="proportionallyDown" image="MakeEpicThings" id="HNg-pW-nu0"/>
                             </imageView>
                             <button toolTip="Close Application" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="71f-Hr-d2Y">
-                                <rect key="frame" x="322" y="5" width="30" height="32"/>
-                                <buttonCell key="cell" type="bevel" title="Quit" alternateTitle="Close the application" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="VpU-D6-Dlq">
+                                <rect key="frame" x="316" y="12" width="30" height="17"/>
+                                <buttonCell key="cell" type="smallSquare" title="Quit" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="VpU-D6-Dlq">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent">q</string>
@@ -683,26 +683,30 @@
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xTe-6E-esw">
                                 <rect key="frame" x="20" y="208" width="160" height="5"/>
                             </box>
-                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGI-IQ-Yt0">
-                                <rect key="frame" x="213" y="3" width="81" height="32"/>
-                                <buttonCell key="cell" type="push" title="Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tJ0-5b-AqY">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PGI-IQ-Yt0">
+                                <rect key="frame" x="280" y="12" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="cDb-HM-nuk"/>
+                                    <constraint firstAttribute="height" constant="20" id="hm6-tc-uMD"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="Settings" imagePosition="only" alignment="center" alternateImage="Settings_Alternate" imageScaling="proportionallyDown" inset="2" id="tJ0-5b-AqY">
+                                    <behavior key="behavior" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="xTe-6E-esw" secondAttribute="trailing" constant="182" id="7Ls-UJ-KaH"/>
-                            <constraint firstAttribute="bottom" secondItem="PGI-IQ-Yt0" secondAttribute="bottom" constant="10" id="Apr-Ba-LPA"/>
                             <constraint firstItem="xTe-6E-esw" firstAttribute="top" secondItem="v9V-dx-rg1" secondAttribute="bottom" constant="16" id="BOv-gl-SXM"/>
                             <constraint firstItem="uXR-S6-vp1" firstAttribute="top" secondItem="xTe-6E-esw" secondAttribute="bottom" constant="16" id="HBH-jK-2GK"/>
-                            <constraint firstAttribute="bottom" secondItem="71f-Hr-d2Y" secondAttribute="bottom" constant="5" id="JZw-TY-wBe"/>
+                            <constraint firstAttribute="bottom" secondItem="PGI-IQ-Yt0" secondAttribute="bottom" constant="12" id="IDx-Lt-8xT"/>
+                            <constraint firstAttribute="bottom" secondItem="71f-Hr-d2Y" secondAttribute="bottom" constant="12" id="M4u-zt-Rb0"/>
                             <constraint firstItem="v9V-dx-rg1" firstAttribute="leading" secondItem="PDz-hz-7b3" secondAttribute="leading" constant="20" id="Snm-am-wlt"/>
-                            <constraint firstItem="71f-Hr-d2Y" firstAttribute="leading" secondItem="PGI-IQ-Yt0" secondAttribute="trailing" constant="10" id="U4M-Wo-EXm"/>
                             <constraint firstItem="xTe-6E-esw" firstAttribute="leading" secondItem="v9V-dx-rg1" secondAttribute="leading" id="a2b-z7-EVK"/>
+                            <constraint firstItem="71f-Hr-d2Y" firstAttribute="leading" secondItem="PGI-IQ-Yt0" secondAttribute="trailing" constant="16" id="o4y-rh-QmL"/>
+                            <constraint firstAttribute="trailing" secondItem="71f-Hr-d2Y" secondAttribute="trailing" constant="16" id="od7-4f-hJs"/>
                             <constraint firstItem="v9V-dx-rg1" firstAttribute="top" secondItem="PDz-hz-7b3" secondAttribute="top" constant="20" id="urO-kp-urO"/>
                             <constraint firstItem="xTe-6E-esw" firstAttribute="leading" secondItem="uXR-S6-vp1" secondAttribute="leading" id="wO0-VY-eV5"/>
-                            <constraint firstAttribute="trailing" secondItem="71f-Hr-d2Y" secondAttribute="trailing" constant="10" id="zEc-dK-zgj"/>
                         </constraints>
                     </view>
                     <connections>
@@ -717,5 +721,7 @@
     </scenes>
     <resources>
         <image name="MakeEpicThings" width="38.400001525878906" height="38.400001525878906"/>
+        <image name="Settings" width="24" height="24"/>
+        <image name="Settings_Alternate" width="24" height="24"/>
     </resources>
 </document>
