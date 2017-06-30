@@ -24,11 +24,17 @@ namespace Ambar
 		    Stop(); 
 		}
 
+        /// <summary>
+        /// Start monitoring events of a given mask.
+        /// </summary>
 		public void Start()
 		{
 			monitor = NSEvent.AddGlobalMonitorForEventsMatchingMask(mask, handler) as NSObject;
 		}
 
+        /// <summary>
+        /// Stop monitoring event and release the resources.
+        /// </summary>
 		public void Stop()
 		{
 			if (monitor != null)

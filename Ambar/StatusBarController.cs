@@ -24,6 +24,11 @@ namespace Ambar
             ViewController.QuitButtonClicked -= HandleQuitButtonClicked;
         }
 
+        /// <summary>
+        /// Initialise a NSStatusItem instance with an image, popover and event handling.
+        /// </summary>
+        /// <param name="image">Image.</param>
+        /// <param name="popOver">Pop over.</param>
         public void InitStatusBarItem(string image, NSPopover popOver)
         {
 			button = statusItem.Button;
@@ -49,6 +54,10 @@ namespace Ambar
             else Show(sender);
 		}
 
+        /// <summary>
+        /// Shows the popover
+        /// </summary>
+        /// <param name="sender">Sender.</param>
 		public void Show(NSObject sender)
 		{
 		    button = statusItem.Button;
@@ -56,6 +65,10 @@ namespace Ambar
 		    eventMonitor.Start();
 		}
 
+        /// <summary>
+        /// Hides the popover
+        /// </summary>
+        /// <param name="sender">Sender.</param>
 		public void Close(NSObject sender)
 		{
 		    popOver.PerformClose(sender);
