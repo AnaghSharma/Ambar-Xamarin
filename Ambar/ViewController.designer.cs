@@ -9,29 +9,21 @@ using System.CodeDom.Compiler;
 
 namespace Ambar
 {
-    [Register ("ViewController")]
-    partial class ViewController
-    {
-        [Outlet]
-        AppKit.NSButton QuitButton { get; set; }
+	[Register ("ViewController")]
+	partial class ViewController
+	{
+		[Outlet]
+		AppKit.NSTextFieldCell titleText { get; set; }
 
-        [Outlet]
-        AppKit.NSTextFieldCell titleText { get; set; }
-
-        [Action ("QuitApplication:")]
-        partial void QuitApplication (Foundation.NSObject sender);
-        
-        void ReleaseDesignerOutlets ()
-        {
-            if (QuitButton != null) {
-                QuitButton.Dispose ();
-                QuitButton = null;
-            }
-
-            if (titleText != null) {
-                titleText.Dispose ();
-                titleText = null;
-            }
-        }
-    }
+		[Action ("SettingsButtonClick:")]
+		partial void SettingsButtonClick (Foundation.NSObject sender);
+		
+		void ReleaseDesignerOutlets ()
+		{
+			if (titleText != null) {
+				titleText.Dispose ();
+				titleText = null;
+			}
+		}
+	}
 }

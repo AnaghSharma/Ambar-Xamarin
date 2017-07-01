@@ -1,4 +1,4 @@
-﻿﻿﻿using System;
+﻿﻿﻿﻿using System;
 using AppKit;
 using Foundation;
 
@@ -41,10 +41,6 @@ namespace Ambar
             }
         }
 
-        partial void QuitApplication(NSObject sender)
-        {
-            if (QuitButtonClicked != null)
-                QuitButtonClicked(this, null);
-        }
+        partial void SettingsButtonClick(NSObject sender)         {             var current = NSApplication.SharedApplication.CurrentEvent;              NSMenu settingsMenu = new NSMenu();              NSMenuItem launch = new NSMenuItem("Launch at Login", new ObjCRuntime.Selector("launch:"), "");             NSMenuItem quit = new NSMenuItem("Quit", new ObjCRuntime.Selector("quit:"), "q");              settingsMenu.AddItem(launch);             settingsMenu.AddItem(quit);              NSMenu.PopUpContextMenu(settingsMenu, current, sender as NSView);         }          [Export ("launch:")]         void Launch(NSObject sender)         {             //Use NSAppleScript to add this app to Login item list of macOS         }          [Export ("quit:")]         void Quit(NSObject sender)         {             QuitButtonClicked?.Invoke(this, null);         } 
     }
 }
