@@ -1,7 +1,7 @@
 # Ambar
 Ambar is a macOS Menu Bar app developed with Xamarin and C#. This project aims to show developing a menu bar app for macOS in C#.
 
-![](https://user-images.githubusercontent.com/6823117/27261866-59acd488-5469-11e7-8cd9-075802d5fb98.png)
+<img src="https://qd31ya-sn3301.files.1drv.com/y4mv06yfcD8ljmfYDwNQfAbD0gepsrIIU51habSGhFbIYxFYW5Os7lZhuttsP9rErl6yKPCIAlCUMfwurc8lmw5WE4DxEtjo-QMxcxExjMU4B6VRUBTvVpjZX7hcHG7KmuyKD_nkvEZNWLJfaoHgIo5YplkmGPMjRR330D656Hr7lfOsRs_8BzlzPEwYojnnGbkL7dtyu58O4cc_cUvvPi1NQ?width=778&height=688&cropmode=none" width="425" height="376" />    <img src="https://pz3sya-sn3301.files.1drv.com/y4mT5cC-Z4h5vCKVvQZ81wOHZPtIfK8ptpzeuYLkGUMBZ-sjthSpnm1eleUUvaKOacmsU9oXD9laGswzsRYKcd0msIn6QQIzuZeHj71nUevzDAKg6APY3cWwa_PswMXD7WDAmtPJBYs87yywL60WusIdAvM0p0enEkEiM4aR_aZSah51PFbqFZ_8I2mJ3e3OP-3yCkYcvsUhwF-yt-Jf8Dnig?width=768&height=690&cropmode=none" width="425" height="376" />
 
 ## Why
 It is for the folks wanting to start developing for macOS/iOS/tvOS/watchOS but do not want to delve into Swift/Obj-C and are already comfortable with C# and .Net technologies. 
@@ -27,6 +27,7 @@ Unless stated otherwise, everything is done in Visual Studio for Mac.
 
 
 ## To-do
+- [x] Add a Contextual Menu to show options.
 - [ ] Add a **Launch at Login** setting.
 - [ ] Add a **About** windows.
 - [ ] Advanced UI.
