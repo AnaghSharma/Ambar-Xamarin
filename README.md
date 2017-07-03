@@ -29,7 +29,7 @@ Unless stated otherwise, everything is done in Visual Studio for Mac.
 ## To-do
 - [x] Add a Contextual Menu to show options.
 - [ ] Add a **Launch at Login** setting.
-- [ ] Add a **About** windows.
+- [ ] Add a **About** window.
 - [ ] Advanced UI.
 
 
