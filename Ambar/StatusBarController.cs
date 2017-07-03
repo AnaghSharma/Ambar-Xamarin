@@ -17,11 +17,13 @@ namespace Ambar
             statusItem = statusBar.CreateStatusItem(NSStatusItemLength.Variable);
             popOver = new NSPopover();
             ViewController.QuitButtonClicked += HandleQuitButtonClicked;
+            ViewController.AboutMenuItemClicked += HandleAboutMenuItemClicked;
 		}
 
         ~StatusBarController()
         {
             ViewController.QuitButtonClicked -= HandleQuitButtonClicked;
+            ViewController.AboutMenuItemClicked -= HandleAboutMenuItemClicked;
         }
 
         /// <summary>
@@ -94,5 +96,18 @@ namespace Ambar
 			if(retValue == 1000)
                 NSApplication.SharedApplication.Terminate((sender as NSObject));
 		}
+
+        void HandleAboutMenuItemClicked(object sender, System.EventArgs e)
+        {
+            Close(sender as NSObject);
+			var storyboard = NSStoryboard.FromName("Main", null);
+			var windowController = storyboard.InstantiateControllerWithIdentifier("AboutWindow") as NSWindowController;
+            windowController.ShowWindow(sender as NSObject);
+
+			NSWindow window = windowController.Window;
+            window.Title = "";
+  			window.TitlebarAppearsTransparent = true;
+			window.MovableByWindowBackground = true;
+        }
     }
 }

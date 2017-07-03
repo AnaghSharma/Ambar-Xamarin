@@ -7,6 +7,8 @@ namespace Ambar
     public partial class ViewController : NSViewController
     {
         public static event EventHandler QuitButtonClicked;
+        public static event EventHandler AboutMenuItemClicked;
+
         NSAttributedString titleString = new NSAttributedString("Make\nEpic\nThings",
 															   new NSStringAttributes()
 															   {
@@ -54,7 +56,7 @@ namespace Ambar
         [Export ("about:")]
         void About(NSObject sender)
         {
-            
+            AboutMenuItemClicked?.Invoke(this, null);
         }
          [Export ("quit:")]         void Quit(NSObject sender)         {             QuitButtonClicked?.Invoke(this, null);         } 
     }
