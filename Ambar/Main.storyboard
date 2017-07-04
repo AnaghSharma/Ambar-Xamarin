@@ -653,8 +653,9 @@
             <objects>
                 <windowController storyboardIdentifier="AboutWindow" id="y2y-fb-9x3" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="KZT-1X-3nI">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                        <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="548" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -673,16 +674,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSh-oi-fu3">
-                                <rect key="frame" x="220" y="126" width="41" height="17"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gVr-I6-4lQ">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AboutBackground" id="fsq-D2-UiR"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSh-oi-fu3">
+                                <rect key="frame" x="6" y="149" width="94" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Ir0-if-JJK"/>
+                                    <constraint firstAttribute="width" constant="90" id="jra-yj-Res"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="About" id="OcI-ML-BKV">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <font key="font" size="28" name="SFUIText-Semibold"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.93420911815068497" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" preferredMaxLayoutWidth="464" translatesAutoresizingMaskIntoConstraints="NO" id="WMQ-pu-vhs">
+                                <rect key="frame" x="6" y="89" width="463" height="60"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="2rN-vv-wCg">
+                                    <font key="font" size="14" name="SFUIText-Regular"/>
+                                    <string key="title">This project is all about showing how to build a macOS menu bar app with Xamarin and C#. And also to show what can be done using Xamarin and C#.</string>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.70234910107671222" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="WMQ-pu-vhs" firstAttribute="top" secondItem="ZSh-oi-fu3" secondAttribute="bottom" id="DkN-cc-7Ma"/>
+                            <constraint firstItem="ZSh-oi-fu3" firstAttribute="leading" secondItem="Qw8-yS-awT" secondAttribute="leading" constant="8" id="iuw-g9-tDT"/>
+                            <constraint firstItem="ZSh-oi-fu3" firstAttribute="leading" secondItem="WMQ-pu-vhs" secondAttribute="leading" id="ly0-fZ-k9z"/>
+                            <constraint firstItem="ZSh-oi-fu3" firstAttribute="top" secondItem="Qw8-yS-awT" secondAttribute="top" constant="72" id="u6L-CG-TWd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="m43-TE-8qM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -749,6 +773,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AboutBackground" width="480" height="270"/>
         <image name="MakeEpicThings" width="38.400001525878906" height="38.400001525878906"/>
         <image name="Settings" width="24" height="24"/>
         <image name="Settings_Alternate" width="24" height="24"/>
