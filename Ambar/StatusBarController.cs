@@ -105,7 +105,7 @@ namespace Ambar
 
 			NSWindow window = windowController.Window;
             window.Title = "";
-  			window.TitlebarAppearsTransparent = true;
+            window.TitlebarAppearsTransparent = true;
 			window.MovableByWindowBackground = true;
 
             windowController.ShowWindow(sender as NSObject);

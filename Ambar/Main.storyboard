@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -674,17 +675,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gVr-I6-4lQ">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVr-I6-4lQ">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AboutBackground" id="fsq-D2-UiR"/>
                             </imageView>
+                            <box boxType="custom" borderType="none" borderWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Ycb-n8-WH8">
+                                <rect key="frame" x="12" y="206" width="80" height="4"/>
+                                <view key="contentView" id="3ff-bp-nGk">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="4"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSh-oi-fu3">
-                                <rect key="frame" x="6" y="149" width="94" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="Ir0-if-JJK"/>
-                                    <constraint firstAttribute="width" constant="90" id="jra-yj-Res"/>
-                                </constraints>
+                                <rect key="frame" x="10" y="156" width="88" height="42"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="About" id="OcI-ML-BKV">
                                     <font key="font" size="28" name="SFUIText-Semibold"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.93420911815068497" colorSpace="calibratedRGB"/>
@@ -692,20 +697,31 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" preferredMaxLayoutWidth="464" translatesAutoresizingMaskIntoConstraints="NO" id="WMQ-pu-vhs">
-                                <rect key="frame" x="6" y="89" width="463" height="60"/>
+                                <rect key="frame" x="10" y="76" width="460" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="456" id="WBc-9z-3uv"/>
+                                </constraints>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="2rN-vv-wCg">
                                     <font key="font" size="14" name="SFUIText-Regular"/>
-                                    <string key="title">This project is all about showing how to build a macOS menu bar app with Xamarin and C#. And also to show what can be done using Xamarin and C#.</string>
+                                    <string key="title">The purpose of this project is to show how to build a macOS menu bar app with Xamarin and C#. It also aims to show what can be done using Xamarin and C#.</string>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.70234910107671222" colorSpace="calibratedRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="WMQ-pu-vhs" firstAttribute="top" secondItem="ZSh-oi-fu3" secondAttribute="bottom" id="DkN-cc-7Ma"/>
-                            <constraint firstItem="ZSh-oi-fu3" firstAttribute="leading" secondItem="Qw8-yS-awT" secondAttribute="leading" constant="8" id="iuw-g9-tDT"/>
-                            <constraint firstItem="ZSh-oi-fu3" firstAttribute="leading" secondItem="WMQ-pu-vhs" secondAttribute="leading" id="ly0-fZ-k9z"/>
-                            <constraint firstItem="ZSh-oi-fu3" firstAttribute="top" secondItem="Qw8-yS-awT" secondAttribute="top" constant="72" id="u6L-CG-TWd"/>
+                            <constraint firstAttribute="trailing" secondItem="Ycb-n8-WH8" secondAttribute="trailing" constant="388" id="3tb-XZ-nbR"/>
+                            <constraint firstItem="Ycb-n8-WH8" firstAttribute="leading" secondItem="Qw8-yS-awT" secondAttribute="leading" constant="12" id="6yc-GM-iR5"/>
+                            <constraint firstItem="Ycb-n8-WH8" firstAttribute="leading" secondItem="WMQ-pu-vhs" secondAttribute="leading" id="IqB-ng-WMN"/>
+                            <constraint firstItem="gVr-I6-4lQ" firstAttribute="leading" secondItem="Qw8-yS-awT" secondAttribute="leading" id="TJH-Hg-thH"/>
+                            <constraint firstAttribute="trailing" secondItem="gVr-I6-4lQ" secondAttribute="trailing" id="ZLZ-2C-Rdh"/>
+                            <constraint firstItem="ZSh-oi-fu3" firstAttribute="leading" secondItem="Qw8-yS-awT" secondAttribute="leading" constant="12" id="fEV-mh-gAc"/>
+                            <constraint firstItem="Ycb-n8-WH8" firstAttribute="top" secondItem="Qw8-yS-awT" secondAttribute="top" constant="60" id="fLa-0L-Cxb"/>
+                            <constraint firstItem="WMQ-pu-vhs" firstAttribute="top" secondItem="ZSh-oi-fu3" secondAttribute="bottom" constant="20" id="jPS-jo-kjC"/>
+                            <constraint firstAttribute="bottom" secondItem="Ycb-n8-WH8" secondAttribute="bottom" constant="206" id="kfs-ya-Tdd"/>
+                            <constraint firstAttribute="bottom" secondItem="gVr-I6-4lQ" secondAttribute="bottom" id="muM-ai-Wce"/>
+                            <constraint firstItem="gVr-I6-4lQ" firstAttribute="top" secondItem="Qw8-yS-awT" secondAttribute="top" id="sCv-U2-iYn"/>
+                            <constraint firstItem="ZSh-oi-fu3" firstAttribute="top" secondItem="3ff-bp-nGk" secondAttribute="bottom" constant="8" id="uqO-w3-gEe"/>
                         </constraints>
                     </view>
                 </viewController>
