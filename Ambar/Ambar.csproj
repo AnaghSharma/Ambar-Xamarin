@@ -66,6 +66,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Assets.xcassets\StatusBarIcon.imageset\" />
+    <Folder Include="Custom Controls\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -80,6 +81,11 @@
     </Compile>
     <Compile Include="EventMonitor.cs" />
     <Compile Include="StatusBarController.cs" />
+    <Compile Include="Custom Controls\HyperlinkTextField.cs" />
+    <Compile Include="AboutViewController.cs" />
+    <Compile Include="AboutViewController.designer.cs">
+      <DependentUpon>AboutViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
