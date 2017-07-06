@@ -14,12 +14,20 @@ namespace Ambar
 	{
 		[Outlet]
 		Ambar.CustomControls.HyperlinkTextField GitHubLink { get; set; }
+
+		[Outlet]
+		Ambar.CustomControls.HyperlinkTextField TwitterLink { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (GitHubLink != null) {
 				GitHubLink.Dispose ();
 				GitHubLink = null;
+			}
+
+			if (TwitterLink != null) {
+				TwitterLink.Dispose ();
+				TwitterLink = null;
 			}
 		}
 	}

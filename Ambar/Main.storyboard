@@ -716,8 +716,17 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrP-rB-Aio" customClass="HyperlinkTextField">
+                                <rect key="frame" x="184" y="12" width="123" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Say hello on Twitter" id="OjV-vj-hA4">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="xrP-rB-Aio" firstAttribute="leading" secondItem="DWr-lQ-vXJ" secondAttribute="trailing" constant="24" id="3Xm-bT-T0j"/>
                             <constraint firstAttribute="trailing" secondItem="Ycb-n8-WH8" secondAttribute="trailing" constant="388" id="3tb-XZ-nbR"/>
                             <constraint firstItem="Ycb-n8-WH8" firstAttribute="leading" secondItem="Qw8-yS-awT" secondAttribute="leading" constant="12" id="6yc-GM-iR5"/>
                             <constraint firstItem="Ycb-n8-WH8" firstAttribute="leading" secondItem="WMQ-pu-vhs" secondAttribute="leading" id="IqB-ng-WMN"/>
@@ -732,10 +741,12 @@
                             <constraint firstAttribute="bottom" secondItem="DWr-lQ-vXJ" secondAttribute="bottom" constant="12" id="ny3-un-FdU"/>
                             <constraint firstItem="gVr-I6-4lQ" firstAttribute="top" secondItem="Qw8-yS-awT" secondAttribute="top" id="sCv-U2-iYn"/>
                             <constraint firstItem="ZSh-oi-fu3" firstAttribute="top" secondItem="3ff-bp-nGk" secondAttribute="bottom" id="uqO-w3-gEe"/>
+                            <constraint firstAttribute="bottom" secondItem="xrP-rB-Aio" secondAttribute="bottom" constant="12" id="z4A-q8-txp"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="GitHubLink" destination="DWr-lQ-vXJ" id="PBr-RY-EGK"/>
+                        <outlet property="TwitterLink" destination="xrP-rB-Aio" id="ucf-m0-IIy"/>
                     </connections>
                 </viewController>
                 <customObject id="m43-TE-8qM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

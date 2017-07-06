@@ -44,6 +44,7 @@ namespace Ambar
             base.ViewDidLoad();
 
 			GitHubLink.Href = "https://github.com/AnaghSharma/Ambar";
+            TwitterLink.Href = "https://twitter.com/AnaghSharma";
         }
 
     }
