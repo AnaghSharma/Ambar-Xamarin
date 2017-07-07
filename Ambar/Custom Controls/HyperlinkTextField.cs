@@ -9,6 +9,8 @@ namespace Ambar.CustomControls
 	public class HyperlinkTextField : NSTextField
 	{
         String href = "";
+		NSTrackingArea hoverarea;
+		NSCursor cursor;
 
 		[Export("Href"), Browsable(true)]
 		public String Href
@@ -40,11 +42,30 @@ namespace Ambar.CustomControls
 				//ForegroundColor = NSColor.Blue,
 				UnderlineStyle = NSUnderlineStyle.Single.GetHashCode()
 			});
+
+			hoverarea = new NSTrackingArea(Bounds, NSTrackingAreaOptions.MouseEnteredAndExited | NSTrackingAreaOptions.ActiveAlways, this, null);
+            AddTrackingArea(hoverarea);
+			cursor = NSCursor.CurrentSystemCursor;
 		}
 
 		public override void MouseDown(NSEvent theEvent)
 		{
 			NSWorkspace.SharedWorkspace.OpenUrl(new NSUrl(href));
+		}
+
+		public override void MouseEntered(NSEvent theEvent)
+		{
+			base.MouseEntered(theEvent);
+
+			cursor = NSCursor.PointingHandCursor;
+			cursor.Push();
+		}
+
+		public override void MouseExited(NSEvent theEvent)
+		{
+			base.MouseEntered(theEvent);
+
+			cursor.Pop();
 		}
 
 	}
