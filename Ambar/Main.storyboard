@@ -804,6 +804,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="SettingsButton" destination="PGI-IQ-Yt0" id="JLt-rR-79F"/>
                         <outlet property="titleText" destination="7VW-Im-aDC" id="EBT-HR-zF4"/>
                     </connections>
                 </viewController>

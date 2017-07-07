@@ -13,6 +13,9 @@ namespace Ambar
 	partial class ViewController
 	{
 		[Outlet]
+		AppKit.NSButton SettingsButton { get; set; }
+
+		[Outlet]
 		AppKit.NSTextFieldCell titleText { get; set; }
 
 		[Action ("SettingsButtonClick:")]
@@ -23,6 +26,11 @@ namespace Ambar
 			if (titleText != null) {
 				titleText.Dispose ();
 				titleText = null;
+			}
+
+			if (SettingsButton != null) {
+				SettingsButton.Dispose ();
+				SettingsButton = null;
 			}
 		}
 	}

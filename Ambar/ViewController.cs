@@ -1,4 +1,4 @@
-﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿using System;
 using AppKit;
 using Foundation;
 
@@ -8,6 +8,8 @@ namespace Ambar
     {
         public static event EventHandler QuitButtonClicked;
         public static event EventHandler AboutMenuItemClicked;
+		NSTrackingArea hoverarea;
+		NSCursor cursor;
 
         NSAttributedString titleString = new NSAttributedString("Make\nEpic\nThings",
 															   new NSStringAttributes()
@@ -28,6 +30,9 @@ namespace Ambar
             // Do any additional setup after loading the view
 
             titleText.AttributedStringValue = titleString;
+			hoverarea = new NSTrackingArea(SettingsButton.Bounds, NSTrackingAreaOptions.MouseEnteredAndExited | NSTrackingAreaOptions.ActiveAlways, this, null);
+			SettingsButton.AddTrackingArea(hoverarea);
+			cursor = NSCursor.CurrentSystemCursor;
         }
 
         public override NSObject RepresentedObject
@@ -58,6 +63,21 @@ namespace Ambar
         {
             AboutMenuItemClicked?.Invoke(this, null);
         }
-         [Export ("quit:")]         void Quit(NSObject sender)         {             QuitButtonClicked?.Invoke(this, null);         } 
+         [Export ("quit:")]         void Quit(NSObject sender)         {             QuitButtonClicked?.Invoke(this, null);         }
+
+		public override void MouseEntered(NSEvent theEvent)
+		{
+			base.MouseEntered(theEvent);
+
+			cursor = NSCursor.PointingHandCursor;
+			cursor.Push();
+		}
+
+		public override void MouseExited(NSEvent theEvent)
+		{
+			base.MouseEntered(theEvent);
+
+			cursor.Pop();
+		}
     }
 }
