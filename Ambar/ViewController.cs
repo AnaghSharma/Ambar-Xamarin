@@ -10,9 +10,11 @@ namespace Ambar
         public static event EventHandler AboutMenuItemClicked;
 		NSTrackingArea hoverarea;
 		NSCursor cursor;
+        NSMenu settingsMenu;
         NSMenuItem launch;
         bool isLoginItem;
 
+        //This is just to adjust the character spacing of Title Text and is not necessary at all
         NSAttributedString titleString = new NSAttributedString("Make\nEpic\nThings",
 															   new NSStringAttributes()
 															   {
@@ -22,8 +24,10 @@ namespace Ambar
 																   }
 															   });
 
-        public ViewController(IntPtr handle) : base(handle)
+
+		public ViewController(IntPtr handle) : base(handle)
         {
+            
         }
 
         public override void ViewDidLoad()
@@ -34,8 +38,21 @@ namespace Ambar
             titleText.AttributedStringValue = titleString;
 			hoverarea = new NSTrackingArea(SettingsButton.Bounds, NSTrackingAreaOptions.MouseEnteredAndExited | NSTrackingAreaOptions.ActiveAlways, this, null);
 			SettingsButton.AddTrackingArea(hoverarea);
-			cursor = NSCursor.CurrentSystemCursor;
-        }
+
+			settingsMenu = new NSMenu();
+
+			launch = new NSMenuItem("Launch at Login", new ObjCRuntime.Selector("launch:"), "");
+			NSMenuItem about = new NSMenuItem("About", new ObjCRuntime.Selector("about:"), "");
+			NSMenuItem quit = new NSMenuItem("Quit", new ObjCRuntime.Selector("quit:"), "q");
+
+
+			settingsMenu.AddItem(launch);
+			settingsMenu.AddItem(about);
+			settingsMenu.AddItem(NSMenuItem.SeparatorItem);
+			settingsMenu.AddItem(quit);
+
+            cursor = NSCursor.CurrentSystemCursor;
+		}
 
         public override NSObject RepresentedObject
         {
@@ -50,12 +67,7 @@ namespace Ambar
             }
         }
 
-        partial void SettingsButtonClick(NSObject sender)         {             var current = NSApplication.SharedApplication.CurrentEvent;              NSMenu settingsMenu = new NSMenu();              launch = new NSMenuItem("Launch at Login", new ObjCRuntime.Selector("launch:"), "");             NSMenuItem about = new NSMenuItem("About", new ObjCRuntime.Selector("about:"), "");
-            NSMenuItem quit = new NSMenuItem("Quit", new ObjCRuntime.Selector("quit:"), "q");
-              settingsMenu.AddItem(launch);
-            settingsMenu.AddItem(about);
-            settingsMenu.AddItem(NSMenuItem.SeparatorItem);             settingsMenu.AddItem(quit);
-
+        partial void SettingsButtonClick(NSObject sender)         {             var current = NSApplication.SharedApplication.CurrentEvent; 
 			var script = "tell application \"System Events\"\n get the name of every login item\n if login item \"Ambar\" exists then\n return true\n else\n return false\n end if\n end tell";
 			NSAppleScript appleScript = new NSAppleScript(script);
 			var errors = new NSDictionary();
