@@ -10,6 +10,9 @@ namespace Ambar
         NSStatusBarButton button;
         NSPopover popOver;
         EventMonitor eventMonitor;
+        NSWindow aboutWindow;
+        NSStoryboard storyboard;
+        NSWindowController windowController;
 
         public StatusBarController()
         {
@@ -18,6 +21,8 @@ namespace Ambar
             popOver = new NSPopover();
             ViewController.QuitButtonClicked += HandleQuitButtonClicked;
             ViewController.AboutMenuItemClicked += HandleAboutMenuItemClicked;
+			storyboard = NSStoryboard.FromName("Main", null);
+			windowController = storyboard.InstantiateControllerWithIdentifier("AboutWindow") as NSWindowController;
 		}
 
         ~StatusBarController()
@@ -100,15 +105,14 @@ namespace Ambar
         void HandleAboutMenuItemClicked(object sender, System.EventArgs e)
         {
             Close(sender as NSObject);
-			var storyboard = NSStoryboard.FromName("Main", null);
-			var windowController = storyboard.InstantiateControllerWithIdentifier("AboutWindow") as NSWindowController;
+			
+            aboutWindow = windowController.Window;
+            aboutWindow.Title = "";
+            aboutWindow.TitlebarAppearsTransparent = true;
+			aboutWindow.MovableByWindowBackground = true;
 
-			NSWindow window = windowController.Window;
-            window.Title = "";
-            window.TitlebarAppearsTransparent = true;
-			window.MovableByWindowBackground = true;
-
-            windowController.ShowWindow(sender as NSObject);
+            //if(!aboutWindow.IsVisible)
+                windowController.ShowWindow(sender as NSObject);
         }
     }
 }
