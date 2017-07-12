@@ -8,9 +8,13 @@ namespace Ambar.CustomControls
 	[Register("HyperlinkTextField"), DesignTimeVisible(true)]
 	public class HyperlinkTextField : NSTextField
 	{
+        #region Private Members
+
         String href = "";
 		NSTrackingArea hoverarea;
 		NSCursor cursor;
+
+        #endregion
 
 		[Export("Href"), Browsable(true)]
 		public String Href
@@ -23,7 +27,9 @@ namespace Ambar.CustomControls
 			set => href = value;
 		}
 
-		public HyperlinkTextField(IntPtr p) : base(p)
+        #region Constructors
+
+        public HyperlinkTextField(IntPtr p) : base(p)
 		{
 			
 		}
@@ -33,12 +39,15 @@ namespace Ambar.CustomControls
             
 		}
 
-		public override void AwakeFromNib()
+        #endregion
+
+        public override void AwakeFromNib()
 		{
 			base.AwakeFromNib();
 
 			AttributedStringValue = new NSAttributedString(StringValue, new NSStringAttributes()
 			{
+                //Uncomment follwing statement and you will be able to change the color of HyperlinkTextField
 				//ForegroundColor = NSColor.Blue,
 				UnderlineStyle = NSUnderlineStyle.Single.GetHashCode()
 			});
@@ -48,11 +57,13 @@ namespace Ambar.CustomControls
 			cursor = NSCursor.CurrentSystemCursor;
 		}
 
+        //Method override to open url on click of HyperlinkTextField
 		public override void MouseDown(NSEvent theEvent)
 		{
 			NSWorkspace.SharedWorkspace.OpenUrl(new NSUrl(href));
 		}
 
+        //Method override to change cursor to pointing hand on Mouse Enter (Hover)
 		public override void MouseEntered(NSEvent theEvent)
 		{
 			base.MouseEntered(theEvent);
@@ -61,6 +72,7 @@ namespace Ambar.CustomControls
 			cursor.Push();
 		}
 
+        //Method override to change cursor back to pointing arrow on Mouse Exit
 		public override void MouseExited(NSEvent theEvent)
 		{
 			base.MouseEntered(theEvent);
