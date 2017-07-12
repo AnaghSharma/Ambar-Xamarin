@@ -5,12 +5,19 @@ namespace Ambar
 {
     public class EventMonitor
     {
-		NSObject monitor;
+        #region Private Members
+
+        NSObject monitor;
 		NSEventMask mask;
 		GlobalEventHandler handler;
 
-		public EventMonitor()
+        #endregion
+
+        #region Constructors
+
+        public EventMonitor()
 		{
+            
 		}
 
 		public EventMonitor(NSEventMask mask, GlobalEventHandler handler)
@@ -19,7 +26,10 @@ namespace Ambar
 			this.handler = handler;
 		}
 
-		~ EventMonitor()
+        #endregion
+
+        //Destructor
+        ~ EventMonitor()
 		{
 		    Stop(); 
 		}
