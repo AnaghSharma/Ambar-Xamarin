@@ -111,8 +111,7 @@ namespace Ambar
             aboutWindow.TitlebarAppearsTransparent = true;
 			aboutWindow.MovableByWindowBackground = true;
 
-            //if(!aboutWindow.IsVisible)
-                windowController.ShowWindow(sender as NSObject);
+            windowController.ShowWindow(sender as NSObject);
         }
     }
 }

@@ -6,6 +6,8 @@ namespace Ambar
 {
     public partial class ViewController : NSViewController
     {
+        #region Data Members
+
         public static event EventHandler QuitButtonClicked;
         public static event EventHandler AboutMenuItemClicked;
 		NSTrackingArea hoverarea;
@@ -24,8 +26,10 @@ namespace Ambar
 																   }
 															   });
 
+        #endregion
 
-		public ViewController(IntPtr handle) : base(handle)
+
+        public ViewController(IntPtr handle) : base(handle)
         {
             
         }
@@ -39,6 +43,7 @@ namespace Ambar
 			hoverarea = new NSTrackingArea(SettingsButton.Bounds, NSTrackingAreaOptions.MouseEnteredAndExited | NSTrackingAreaOptions.ActiveAlways, this, null);
 			SettingsButton.AddTrackingArea(hoverarea);
 
+            //Contextual Menu for settings
 			settingsMenu = new NSMenu();
 
 			launch = new NSMenuItem("Launch at Login", new ObjCRuntime.Selector("launch:"), "");
@@ -68,6 +73,7 @@ namespace Ambar
         }
 
         partial void SettingsButtonClick(NSObject sender)         {             var current = NSApplication.SharedApplication.CurrentEvent; 
+            //Checking if the app is in the login items or not
 			var script = "tell application \"System Events\"\n get the name of every login item\n if login item \"Ambar\" exists then\n return true\n else\n return false\n end if\n end tell";
 			NSAppleScript appleScript = new NSAppleScript(script);
 			var errors = new NSDictionary();
@@ -88,23 +94,28 @@ namespace Ambar
             NSDictionary errors = new NSDictionary();
             if (!isLoginItem)
             {
+                //AppleScript to add app to login items
                 script = "tell application \"System Events\"\n make new login item at end of login items with properties {name: \"Ambar\", path:\"/Applications/Ambar.app\", hidden:false}\n end tell";
                 login = new NSAppleScript(script);
                 login.ExecuteAndReturnError(out errors);
             }
             else
             {
+                //AppleScript to delete app from login items
 				script = "tell application \"System Events\"\n delete login item \"Ambar\"\n end tell";
 				login = new NSAppleScript(script);
 				login.ExecuteAndReturnError(out errors);
-            }         }            
+            }         } 
+        //Delegating the About Menu Item click event to StatusBarController.cs
         [Export ("about:")]
         void About(NSObject sender)
         {
             AboutMenuItemClicked?.Invoke(this, null);
         }
-         [Export ("quit:")]         void Quit(NSObject sender)         {             QuitButtonClicked?.Invoke(this, null);         }
 
+        //Delegating the Quit Menu Item click event to StatusBarController.cs         [Export ("quit:")]         void Quit(NSObject sender)         {             QuitButtonClicked?.Invoke(this, null);         }
+
+		//Method override to change cursor to pointing hand on Mouse Enter (Hover)
 		public override void MouseEntered(NSEvent theEvent)
 		{
 			base.MouseEntered(theEvent);
@@ -112,7 +123,7 @@ namespace Ambar
 			cursor = NSCursor.PointingHandCursor;
 			cursor.Push();
 		}
-
+		//Method override to change cursor to pointing hand on Mouse Exit
 		public override void MouseExited(NSEvent theEvent)
 		{
 			base.MouseEntered(theEvent);
