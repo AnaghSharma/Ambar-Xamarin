@@ -3,6 +3,10 @@ Ambar is a macOS Menu Bar app developed with Xamarin and C#. This project aims t
 
 <img src="https://qd31ya-sn3301.files.1drv.com/y4mv06yfcD8ljmfYDwNQfAbD0gepsrIIU51habSGhFbIYxFYW5Os7lZhuttsP9rErl6yKPCIAlCUMfwurc8lmw5WE4DxEtjo-QMxcxExjMU4B6VRUBTvVpjZX7hcHG7KmuyKD_nkvEZNWLJfaoHgIo5YplkmGPMjRR330D656Hr7lfOsRs_8BzlzPEwYojnnGbkL7dtyu58O4cc_cUvvPi1NQ?width=778&height=688&cropmode=none" width="425" height="376" />    <img src="https://pz3sya-sn3301.files.1drv.com/y4mT5cC-Z4h5vCKVvQZ81wOHZPtIfK8ptpzeuYLkGUMBZ-sjthSpnm1eleUUvaKOacmsU9oXD9laGswzsRYKcd0msIn6QQIzuZeHj71nUevzDAKg6APY3cWwa_PswMXD7WDAmtPJBYs87yywL60WusIdAvM0p0enEkEiM4aR_aZSah51PFbqFZ_8I2mJ3e3OP-3yCkYcvsUhwF-yt-Jf8Dnig?width=768&height=690&cropmode=none" width="425" height="376" />
 
+
+### Update
+Using Ambar as the base, I was able to build [Carol - a minimal and beautiful lyrics app for macOS](https://github.com/AnaghSharma/Carol). Check it out.
+
 ## Why
 It is for the folks wanting to start developing for macOS/iOS/tvOS/watchOS but do not want to delve into Swift/Obj-C and are already comfortable with C# and .Net technologies. 
 
