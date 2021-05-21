@@ -5,7 +5,7 @@ Ambar is a macOS Menu Bar app developed with Xamarin and C#. This project aims t
 
 
 ### Update
-Using Ambar as the base, I was able to build [Carol - a minimal and beautiful lyrics app for macOS](https://github.com/AnaghSharma/Carol). Check it out.
+Using Ambar as the base, I was able to build [Carol - a minimal and beautiful lyrics app for macOS](https://github.com/AnaghSharma/Carol-Xamarin). Check it out.
 
 ## Why
 It is for the folks wanting to start developing for macOS/iOS/tvOS/watchOS but do not want to delve into Swift/Obj-C and are already comfortable with C# and .Net technologies. 
